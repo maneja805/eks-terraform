@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: sso-users-node-access
+subjects:
+- kind: Group             # Use 'Group' for SSO users
+  name: <YOUR-SSO-K8S-GROUP-NAME> # Example: sso-viewers
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: view              # Use the 'view' role, or your custom role
+  apiGroup: rbac.authorization.k8s.io

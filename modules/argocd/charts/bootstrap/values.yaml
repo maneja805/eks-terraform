@@ -1,0 +1,4 @@
+name: addons
+namespace: argocd
+project: default
+destinationNamespace: argocd
